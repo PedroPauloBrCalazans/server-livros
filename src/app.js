@@ -1,12 +1,7 @@
 import express from "express";
-import routesLivros from "./routes/livro.js";
+import routes from "./routes/index.js";
 
 const app = express();
+routes(app);
 
-const port = 7474;
-
-app.use("/livros", routesLivros);
-
-app.listen(port, () => {
-  console.log(`Servidor subiu na porta ${port} 🚀🚀🚀`);
-});
+export default app;
