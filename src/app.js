@@ -1,12 +1,11 @@
-const express = require("express");
+import express from "express";
+import routesLivros from "./routes/livro.js";
 
 const app = express();
 
 const port = 7474;
 
-app.get("/", (req, res) => {
-  res.send("olá mundão Plana");
-});
+app.use("/livros", routesLivros);
 
 app.listen(port, () => {
   console.log(`Servidor subiu na porta ${port} 🚀🚀🚀`);
