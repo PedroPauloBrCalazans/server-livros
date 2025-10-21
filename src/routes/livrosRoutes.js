@@ -3,7 +3,8 @@ import LivroController from "../controllers/livroController.js";
 
 const router = Router();
 
-router.get("/", LivroController.listarLivros);
+router.get("/livros", LivroController.listarLivros);
+router.get("/livros/:id", LivroController.listarLivroID);
 
 router.post("/", (req, res) => {});
 

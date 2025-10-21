@@ -1,62 +1,62 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "nome": "Cabeça fria, coração quente"
   },
   {
-    "id": "2",
+    "id": 2,
     "nome": "O Senhor dos Anéis"
   },
   {
-    "id": "3",
+    "id": 3,
     "nome": "Dom Casmurro"
   },
   {
-    "id": "4",
+    "id": 4,
     "nome": "1984"
   },
   {
-    "id": "5",
+    "id": 5,
     "nome": "A Revolução dos Bichos"
   },
   {
-    "id": "6",
+    "id": 6,
     "nome": "O Pequeno Príncipe"
   },
   {
-    "id": "7",
+    "id": 7,
     "nome": "Harry Potter e a Pedra Filosofal"
   },
   {
-    "id": "8",
+    "id": 8,
     "nome": "O Hobbit"
   },
   {
-    "id": "9",
+    "id": 9,
     "nome": "Orgulho e Preconceito"
   },
   {
-    "id": "10",
+    "id": 10,
     "nome": "A Metamorfose"
   },
   {
-    "id": "11",
+    "id": 11,
     "nome": "Cem Anos de Solidão"
   },
   {
-    "id": "12",
+    "id": 12,
     "nome": "O Código Da Vinci"
   },
   {
-    "id": "13",
+    "id": 13,
     "nome": "A Menina que Roubava Livros"
   },
   {
-    "id": "14",
+    "id": 14,
     "nome": "O Alquimista"
   },
   {
-    "id": "15",
+    "id": 15,
     "nome": "As Crônicas de Nárnia"
   }
 ]

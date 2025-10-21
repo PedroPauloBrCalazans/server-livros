@@ -1,11 +1,26 @@
-import bdFake from "../livros.json" assert { type: "json" };
+import { getLivrosPorId, getTodosLivros } from "../services/livroService.js";
 
 class LivroController {
   static async listarLivros(req, res) {
     try {
-      res.status(200).json(bdFake);
+      const livros = getTodosLivros();
+      res.status(200).json(livros);
     } catch (error) {
-      res.status(500).send(error);
+      res.status(500).send({ erro: error.message });
+    }
+  }
+
+  static async listarLivroID(req, res) {
+    try {
+      const id = req.params.id;
+      const livro = getLivrosPorId(id);
+
+      if (!livro) {
+        return res.status(404).send({ mensagem: "Livro não encontrado!" });
+      }
+      res.status(200).send(livro);
+    } catch (error) {
+      res.status(500).send({ erro: error.message });
     }
   }
 }
