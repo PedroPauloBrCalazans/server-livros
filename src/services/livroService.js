@@ -1,4 +1,6 @@
-import bdFake from "../livros.json" assert { type: "json" };
+// Não se usa “assert”, usa-se “with”.
+//import bdFake from "../livros.json" assert { type: "json" };
+import bdFake from "../livros.json" with { type: "json" };
 
 function getTodosLivros() {
   return bdFake;
