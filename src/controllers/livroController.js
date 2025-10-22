@@ -1,4 +1,4 @@
-import { getLivrosPorId, getTodosLivros } from "../services/livroService.js";
+import { getLivrosPorId, getTodosLivros, cadastrar } from "../services/livroService.js";
 
 class LivroController {
   static async listarLivros(req, res) {
@@ -19,6 +19,16 @@ class LivroController {
         return res.status(404).send({ mensagem: "Livro não encontrado!" });
       }
       res.status(200).send(livro);
+    } catch (error) {
+      res.status(500).send({ erro: error.message });
+    }
+  }
+
+  static async cadastrarLivro(req, res) {
+    try {
+      const livroNovo = req.body;
+      cadastrar(livroNovo);
+      res.status(201).send("Livro inserido com sucesso");
     } catch (error) {
       res.status(500).send({ erro: error.message });
     }

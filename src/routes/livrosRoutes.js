@@ -6,7 +6,7 @@ const router = Router();
 router.get("/livros", LivroController.listarLivros);
 router.get("/livros/:id", LivroController.listarLivroID);
 
-router.post("/", (req, res) => {});
+router.post("/livros", LivroController.cadastrarLivro);
 
 router.put("/", (req, res) => {});
 

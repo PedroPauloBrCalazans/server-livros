@@ -9,4 +9,19 @@ function getLivrosPorId(id) {
   return livro || null;
 }
 
-export { getTodosLivros, getLivrosPorId };
+function cadastrar(livroNovo) {
+  // Gera um novo ID com base no maior ID existente
+  const novoId = bdFake.length > 0 ? Math.max(...bdFake.map(l => l.id)) + 1 : 1;
+
+  // Cria o novo livro com ID
+  const livroComId = { id: novoId, ...livroNovo };
+
+  // Adiciona o novo livro ao banco de dados fake
+  bdFake.push(livroComId);
+
+  // Retorna o livro cadastrado (opcional)
+  return livroComId;
+}
+
+
+export { getTodosLivros, getLivrosPorId, cadastrar };
