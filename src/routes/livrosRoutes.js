@@ -8,8 +8,8 @@ router.get("/livros/:id", LivroController.listarLivroID);
 
 router.post("/livros", LivroController.cadastrarLivro);
 
-router.put("/", (req, res) => {});
+router.put("/livros/:id", LivroController.atualizarLivro);
 
-router.delete("/", (req, res) => {});
+router.delete("/livros/:id", LivroController.deletarLivro);
 
 export default router;

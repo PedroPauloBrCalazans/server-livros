@@ -23,5 +23,31 @@ function cadastrar(livroNovo) {
   return livroComId;
 }
 
+function atualizar(id, dadosAtualizados) {
+  // Encontra o índice do livro com o ID informado
+  const indice = bdFake.findIndex((livro) => livro.id === Number(id));
 
-export { getTodosLivros, getLivrosPorId, cadastrar };
+  // Se o livro não for encontrado, retorna null
+  if (indice === -1) {
+    return null;
+  }
+
+  // Atualiza o livro mantendo o ID original
+  bdFake[indice] = { ...bdFake[indice], ...dadosAtualizados, id: Number(id) };
+
+  // Retorna o livro atualizado
+  return bdFake[indice];
+}
+
+function deletar(id) {
+  const indice = bdFake.findIndex((livro) => livro.id === Number(id));
+
+  if (indice === -1) {
+    return false;
+  }
+
+  bdFake.splice(indice, 1);
+  return true;
+}
+
+export { getTodosLivros, getLivrosPorId, cadastrar, atualizar, deletar };
