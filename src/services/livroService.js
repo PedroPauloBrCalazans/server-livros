@@ -11,7 +11,8 @@ function getLivrosPorId(id) {
 
 function cadastrar(livroNovo) {
   // Gera um novo ID com base no maior ID existente
-  const novoId = bdFake.length > 0 ? Math.max(...bdFake.map(l => l.id)) + 1 : 1;
+  const novoId =
+    bdFake.length > 0 ? Math.max(...bdFake.map((l) => l.id)) + 1 : 1;
 
   // Cria o novo livro com ID
   const livroComId = { id: novoId, ...livroNovo };
