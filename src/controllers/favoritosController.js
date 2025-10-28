@@ -2,12 +2,12 @@ import {
   cadastrarFavoritos,
   deletarFavoritos,
   getAllFavoritos,
-} from "../services/favoritosService";
+} from "../services/favoritosService.js";
 
 class FavoritosController {
   static listarFavoritos(req, res) {
     try {
-      const favoritos = getAllFavoritos;
+      const favoritos = getAllFavoritos();
       res.status(200).json(favoritos);
     } catch (error) {
       res.status(500).send({ erro: error.message });
