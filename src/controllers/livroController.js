@@ -1,4 +1,10 @@
-import { getLivrosPorId, getTodosLivros, cadastrar, atualizar, deletar } from "../services/livroService.js";
+import {
+  getLivrosPorId,
+  getTodosLivros,
+  cadastrar,
+  atualizar,
+  deletar,
+} from "../services/livroService.js";
 
 class LivroController {
   static async listarLivros(req, res) {
@@ -39,14 +45,18 @@ class LivroController {
       const id = req.params.id;
       const dadosAtualizados = req.body;
 
-      const livroAtualizado = atualizar(id, dadosAtualizados)
+      const livroAtualizado = atualizar(id, dadosAtualizados);
 
-      if(!livroAtualizado) {
-        return res.status(404).send({mensagem: "Livro não encontrado!"})
+      if (!livroAtualizado) {
+        return res.status(404).send({ mensagem: "Livro não encontrado!" });
       }
 
-      res.status(200).send({mensagem: "Livro atualizado com sucesso!", livro: livroAtualizado})
-
+      res
+        .status(200)
+        .send({
+          mensagem: "Livro atualizado com sucesso!",
+          livro: livroAtualizado,
+        });
     } catch (error) {
       res.status(500).send({ erro: error.message });
     }
@@ -57,13 +67,13 @@ class LivroController {
       const id = req.params.id;
       const sucesso = deletar(id);
 
-      if(!sucesso) {
-        return res.status(404).send({mensagem: "Livro não encontrado!"})
+      if (!sucesso) {
+        return res.status(404).send({ mensagem: "Livro não encontrado!" });
       }
 
-      res.status(200).send({mensagem: "Livro deletado com sucesso!"})
+      res.status(200).send({ mensagem: "Livro deletado com sucesso!" });
     } catch (error) {
-       res.status(500).send({ erro: error.message });
+      res.status(500).send({ erro: error.message });
     }
   }
 }
